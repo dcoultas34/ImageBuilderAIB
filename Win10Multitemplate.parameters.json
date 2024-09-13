@@ -1,0 +1,18 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "imageTemplateName": {
+            "value": "ImageTemplate10Multi" 
+        },
+        "api-version": {
+            "value": "22-02-14"
+        },
+        "svclocation": {
+            "value": "UKSouth" 
+        },
+        "Subscription": {
+            "value": "277f94fc-e069-460c-b519-ed38437f3c35"
+        }
+    }
+}

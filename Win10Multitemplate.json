@@ -1,0 +1,90 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "imageTemplateName": {
+        "type": "string"
+      },
+      "api-version": {
+        "type": "string"
+      },
+      "svclocation": {
+        "type": "string"
+      }
+    },
+    "variables": {},
+    "resources": [
+      {
+        "name": "[parameters('imageTemplateName')]",
+        "type": "Microsoft.VirtualMachineImages/imageTemplates",
+        "apiVersion": "[parameters('api-version')]",
+        "location": "[parameters('svclocation')]",
+        "dependsOn": [],
+        "tags": {
+          "imagebuilderTemplate": "win10multi",
+          "userIdentity": "enabled"
+        },
+        "identity": {
+          "type": "UserAssigned",
+          "userAssignedIdentities": {
+            "<UserAssignedID>": {}
+          }
+        },
+        "properties": {
+          "buildTimeoutInMinutes": 90,
+          "vmProfile": {
+            "vmSize": "Standard_D2_v2",
+            "osDiskSizeGB": 127
+          },
+          "source": {
+            "type": "PlatformImage",
+            "publisher": "MicrosoftWindowsDesktop",
+            "offer": "Windows-10",
+            "sku": "20h2-evd",
+            "version": "latest"
+          },
+          "customize": [
+            {
+              "type": "PowerShell",
+              "name": "GetAzCopy",
+              "inline": [
+                "New-Item -Type Directory -Path 'c:\\' -Name temp",
+                "invoke-webrequest -uri 'https://aka.ms/downloadazcopy-v10-windows' -OutFile 'c:\\temp\\azcopy.zip'",
+                "Expand-Archive 'c:\\temp\\azcopy.zip' 'c:\\temp'",
+                "copy-item 'C:\\temp\\azcopy_windows_amd64_*\\azcopy.exe\\' -Destination 'c:\\temp'"
+              ]
+            },
+            {
+              "type": "PowerShell",
+              "name": "GetArchive",
+              "inline": [
+                "c:\\temp\\azcopy.exe copy 'https://davesfslogix.blob.core.windows.net/software?sp=r&st=2024-09-13T14:21:42Z&se=2025-03-01T23:21:42Z&spr=https&sv=2022-11-02&sr=c&sig=1zbcImumHIGkEE%2B0FAEfUNrSe1AAd03DO4IEYSafY40%3D c:\\temp\\software.zip",
+                "Expand-Archive 'c:\\temp\\software.zip' c:\\temp"
+              ]
+            },
+            {
+              "type": "PowerShell",
+              "runElevated": true,
+              "name": "RunPoShInstall",
+              "scriptUri": "https://davesfslogix.blob.core.windows.net/scripts/Install-Applications.ps1?sp=r&st=2024-09-13T14:30:43Z&se=2025-01-10T23:30:43Z&spr=https&sv=2022-11-02&sr=b&sig=qOLGGEGHk07VRvsYa8jCbxHtnalgxdXjXWi5rFjrfMo%3D"
+            }
+          ],
+          "distribute": [
+            {
+              "type": "SharedImage",
+              "galleryImageId": "</subscriptions/277f94fc-e069-460c-b519-ed38437f3c35/resourceGroups/MasterImage_group/providers/Microsoft.Compute/galleries/Win11TemplateTesting>",
+              "runOutputName": "win10Client",
+              "artifactTags": {
+                "environment": "Lab",
+                "Owner": "IT"
+              },
+              "replicationRegions": [
+                "UKSouth"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+  
