@@ -12,7 +12,7 @@ pool:
 
 variables:
 - name: Location
-  value: 'UkSout'
+  value: 'UkSouth'
 - name: ResourceGroup
   value: 'DavesTestImageBuild'
 - name: ImageTemplateName
