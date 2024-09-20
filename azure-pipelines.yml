@@ -26,8 +26,8 @@ steps:
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
-                  az storage blob upload \
-                    --account-name davesfslogix2 \
+      az storage blob upload \
+                    --account-name davesfslogix \
                    --container-name scripts \
                     --name Install-Applications.ps1 \
                     --file Install-Applications.ps1 \
