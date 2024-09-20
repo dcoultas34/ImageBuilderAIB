@@ -30,7 +30,7 @@ steps:
                     --account-name davesfslogix \
                    --container-name scripts \
                     --name Install-Applications.ps1 \
-                    --file Install-Applications.ps1 \
+                    --file Install-Applications.ps1 --overwrite \
 
 -   task: AzureResourceManagerTemplateDeployment@3
     displayName: "Deploy template"
