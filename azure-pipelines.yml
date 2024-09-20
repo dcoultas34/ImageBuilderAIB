@@ -14,7 +14,7 @@ variables:
 - name: Location
   value: 'UkSouth'
 - name: ResourceGroup
-  value: 'DavesTestImageBuild'
+  value: 'MasterImage_group'
 - name: ImageTemplateName
   value: 'ImageTemplateWin10Multi'
 
