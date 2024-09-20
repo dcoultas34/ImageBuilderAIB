@@ -44,7 +44,7 @@ steps:
       location: '$(Location)'
       templateLocation: 'Linked artifact'
       csmFile: 'Win10MultiTemplate.json'
-      csmParametersFile: 'Win10MultiTemplate.parameters.json'
+      csmParametersFile: 'Win10Multitemplate.parameters.json'
       deploymentMode: 'Incremental'
 - task: AzurePowerShell@5
   displayName: "Install Az.Imagebuilder"
