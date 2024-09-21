@@ -43,7 +43,7 @@ steps:
       resourceGroupName: '$(ResourceGroup)'
       location: '$(Location)'
       templateLocation: 'Linked artifact'
-      csmFile: 'Win10MultiTemplate.json'
+      csmFile: 'Win10Multitemplate.json'
       csmParametersFile: 'Win10Multitemplate.parameters.json'
       deploymentMode: 'Incremental'
 - task: AzurePowerShell@5
