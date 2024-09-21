@@ -30,7 +30,7 @@
         "identity": {
           "type": "UserAssigned",
           "userAssignedIdentities": {
-            "Davesnewbuildidentity": {}
+            "/subscriptions/277f94fc-e069-460c-b519-ed38437f3c35/resourcegroups/DavesTestImageBuild/providers/Microsoft.ManagedIdentity/userAssignedIdentities/Davesnewbuildidentity": {}
           }
         },
         "properties": {
