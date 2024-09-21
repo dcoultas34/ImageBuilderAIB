@@ -30,7 +30,7 @@
         "identity": {
           "type": "UserAssigned",
           "userAssignedIdentities": {
-            "<UserAssignedID>": {}
+            "Davesnewbuildidentity": {}
           }
         },
         "properties": {
