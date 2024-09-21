@@ -10,6 +10,9 @@
       },
       "svclocation": {
         "type": "string"
+      },
+      "Subscription": {
+        "type": "string"
       }
     },
     "variables": {},
