@@ -75,7 +75,7 @@
           "distribute": [
             {
               "type": "SharedImage",
-              "ManagedImageSharedImageGalleryId": "/subscriptions/277f94fc-e069-460c-b519-ed38437f3c35/resourceGroups/MasterImage_group/providers/Microsoft.Compute/galleries/MyImageGallery",
+              "galleryImageId": "/subscriptions/277f94fc-e069-460c-b519-ed38437f3c35/resourceGroups/MasterImage_group/providers/Microsoft.Compute/galleries/MyImageGallery",
               "runOutputName": "win10Client",
               "artifactTags": {
                 "environment": "Lab",
