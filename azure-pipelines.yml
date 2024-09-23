@@ -16,7 +16,7 @@ variables:
 - name: ResourceGroup
   value: 'MasterImage_group'
 - name: ImageTemplateName
-  value: 'ImageTemplate10Multi'
+  value: 'DavesWIN10'
 
 steps:
 - task: AzureCLI@2
