@@ -14,7 +14,7 @@ variables:
 - name: Location
   value: 'UkSouth'
 - name: ResourceGroup
-  value: 'MasterImage_group'
+  value: 'NewDevopsRG'
 - name: ImageTemplateName
   value: 'ImageTemplate10MultiDaves'
 
