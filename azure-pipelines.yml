@@ -59,7 +59,7 @@ steps:
   inputs:
       azureSubscription: 'Imagebuildertesting'
       ScriptType: 'InlineScript'
-      Inline: 'Start-AzImageBuilderTemplate -ResourceGroupName $(ResourceGroup) -Name $(ImageTemplateName)'''
+      Inline: 'Start-AzImageBuilderTemplate -ResourceGroupName $(ResourceGroup) -Name $(ImageTemplateName)'
       azurePowerShellVersion: 'LatestVersion'
 
 - task: AzurePowerShell@5
