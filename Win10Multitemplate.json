@@ -75,7 +75,7 @@
           "distribute": [
             {
               "type": "SharedImage",
-              "galleryImageId": "[concat('/subscriptions/',parameters('subscription'),'/resourceGroups/MasterImage_group/providers/Microsoft.Compute/galleries/MyImageGallery/images/DAVESGOLD')]",
+              "galleryImageId": "[concat('/subscriptions/',parameters('subscription'),'/resourceGroups/MasterImage_group/providers/Microsoft.Compute/galleries/MyImageGallery/images/MyMasterImage')]",
               "runOutputName": "win10Client",
               "artifactTags": {
                 "environment": "Lab",
