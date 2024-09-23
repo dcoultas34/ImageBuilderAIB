@@ -82,11 +82,9 @@
                 "environment": "Lab",
                 "Owner": "IT"
               },
-        "targetRegions": [
-             {
-              "name": "uksouth",
-              "replicaCount": 0,
-              "storageAccountType": "Standard_ZRS"
+         "replicationRegions": [
+                "uksouth"
+         ]
               }
           ]
         }
