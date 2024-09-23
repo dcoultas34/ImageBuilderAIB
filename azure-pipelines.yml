@@ -67,7 +67,7 @@ steps:
   inputs:
       azureSubscription: 'Imagebuildertesting'
       ScriptType: 'InlineScript'
-      Inline: '''Remove-AzImageBuilderTemplate -ImageTemplateName $(ImageTemplateName) -ResourceGroupName $(ResourceGroup)'''
+      Inline: 'Remove-AzImageBuilderTemplate -ImageTemplateName $(ImageTemplateName) -ResourceGroupName $(ResourceGroup)'
       azurePowerShellVersion: 'LatestVersion'
 
 
