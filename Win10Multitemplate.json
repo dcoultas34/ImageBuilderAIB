@@ -44,7 +44,8 @@
             "publisher": "MicrosoftWindowsDesktop",
             "offer": "office-365",
             "sku": "win10-22h2-avd-m365",
-            "version": "latest"
+            "version": "latest",
+            "HyperVGeneration": "V2"
           },
           "customize": [
             {
