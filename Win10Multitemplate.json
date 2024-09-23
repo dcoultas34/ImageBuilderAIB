@@ -42,8 +42,8 @@
           "source": {
             "type": "PlatformImage",
             "publisher": "MicrosoftWindowsDesktop",
-            "offer": "office-365",
-            "sku": "win10-22h2-avd-m365",
+            "offer": "Windows-11",
+            "sku": "win11-21h2-avd",
             "version": "latest",
             "HyperVGeneration": "V2"
           },
